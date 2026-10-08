@@ -37,7 +37,9 @@ export default function UpdateCard({ onStartDownload, isDownloaded }: UpdateCard
       </div>
 
       <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3">
-        <button
+        <a
+          href={downloadUrl}
+          download
           onClick={onStartDownload}
           className="inline-flex items-center gap-2.5 bg-[#e31837] hover:bg-[#c41230] text-white px-7 py-3.5 rounded-md font-semibold text-base transition-all shadow-md hover:shadow-lg cursor-pointer"
         >
@@ -45,7 +47,7 @@ export default function UpdateCard({ onStartDownload, isDownloaded }: UpdateCard
             <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
           </svg>
           {isDownloaded ? 'Re-download Patch.exe ✓' : 'Download Patch.exe'}
-        </button>
+        </a>
 
         {downloadUrl !== '#' && (
           <a
